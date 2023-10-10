@@ -21,4 +21,4 @@ jobs:
         env:
           owner: ${{ inputs.ORG }}
           repo: ${{ inputs.REPO }}
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          TOKEN: ${{ secrets.PAT }}

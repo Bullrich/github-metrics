@@ -43,5 +43,5 @@ jobs:
           owner: ${{ inputs.ORG }}
           repo: ${{ inputs.REPO }}
           # You need a personal access token with scope repo
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          TOKEN: ${{ secrets.PAT }}
 ```

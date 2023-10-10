@@ -5,7 +5,7 @@ COPY bun.lockb ./
 
 RUN bun install
 
-COPY index.ts ./
+COPY action.ts ./
 COPY src src
 
-RUN bun run index.ts
+CMD [ "bun", "run", "./action.ts" ]
