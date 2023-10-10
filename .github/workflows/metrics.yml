@@ -1,0 +1,24 @@
+name: Get metrics
+
+on:
+  workflow_dispatch:
+    inputs:
+      ORG:
+        description: 'Organization'
+        required: true
+        type: string
+      REPO:
+        description: 'Repository name'
+        required: true
+        type: string
+  
+jobs:
+  repository-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch metrics
+        uses: Bullrich/github-metrics@main
+        env:
+          owner: ${{ inputs.ORG }}
+          repo: ${{ inputs.REPO }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
