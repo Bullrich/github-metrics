@@ -1,0 +1,20 @@
+name: "GitHub Metrics"
+description: "Collect PR and Issues metrics from repository."
+author: Bullrich
+branding:
+  icon: list
+  color: red
+inputs:
+  TOKEN:
+    required: true
+    description: Private Access Token with the scope repo
+  repo:
+    required: false
+    description: The repo to analyze
+  org:
+    required: false
+    description: The organization that owns the repo
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
