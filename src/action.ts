@@ -1,5 +1,5 @@
 import { context, getOctokit } from "@actions/github";
-import { GitHubApi } from "./src/github";
+import { GitHubApi } from "./github/api";
 import { getInput, summary } from "@actions/core";
 
 console.log("Hello via Bun!");
