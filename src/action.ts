@@ -32,6 +32,8 @@ console.log("Total amount", total);
 
 const report = await client.downloadIssues();
 
+console.log("Got issues. Generating report");
+
 summary
     .addHeading(`Metrics report for ${repo.owner}/${repo.repo}`)
     .addHeading("Issues", 3)
@@ -48,3 +50,5 @@ summary
         ["Closed", report.prs.closed.toString()],
     ]).addRaw(`Average duration: ${report.prs.duration}`)
     .write();
+
+console.log("Finished generating report");

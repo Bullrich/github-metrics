@@ -57,6 +57,10 @@ export class GitHubApi {
 
         console.log("Searching issues for", this.repository);
 
+        if((this.issues + this.prs) > 1000) {
+            console.log("This will take a minute or two.");
+        }
+
 
         const data = await this.api.paginate(this.api.rest.issues.listForRepo, { state: "all", owner: this.repo.org, repo: this.repo.repo, });
 
