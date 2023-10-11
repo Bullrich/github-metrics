@@ -42,7 +42,8 @@ summary
         ["Open", report.issues.open.toString()],
         ["Closed", report.issues.closed.toString()],
         ["Comments", report.issues.comments.toString()],
-    ]).addRaw(`Average duration: ${report.issues.duration}`)
+        ["Average time until closed", report.issues.duration.toString()],
+    ])
     .addEOL()
     .addHeading("Pull Requests", 3)
     .addTable([
@@ -50,7 +51,15 @@ summary
         ["Open", report.prs.open.toString()],
         ["Closed", report.prs.closed.toString()],
         ["Comments", report.prs.comments.toString()],
-    ]).addRaw(`Average duration: ${report.prs.duration}`)
+        ["Size", report.prs.size.toString()],
+        ["Time to First Review", report.prs.comments.toString()],
+        ["Average time until closed", report.prs.duration.toString()],
+    ])
+    .addHeading("Most active PR author", 5)
+    .addRaw(`@${report.prs.author[0]} with ${report.prs.author[1]} created PRs`)
+    .addBreak()
+    .addHeading("Most active reviewer", 5)
+    .addRaw(`@${report.prs.reviewers[0]} with ${report.prs.author[1]} reviews`)
     .write();
 
 console.log("Finished generating report");
