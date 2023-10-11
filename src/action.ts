@@ -41,6 +41,7 @@ summary
         ["Total", report.issues.total.toString()],
         ["Open", report.issues.open.toString()],
         ["Closed", report.issues.closed.toString()],
+        ["Comments", report.issues.comments.toString()],
     ]).addRaw(`Average duration: ${report.issues.duration}`)
     .addEOL()
     .addHeading("Pull Requests", 3)
@@ -48,6 +49,7 @@ summary
         ["Total", report.prs.total.toString()],
         ["Open", report.prs.open.toString()],
         ["Closed", report.prs.closed.toString()],
+        ["Comments", report.prs.comments.toString()],
     ]).addRaw(`Average duration: ${report.prs.duration}`)
     .write();
 
