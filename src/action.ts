@@ -13,7 +13,7 @@ const getRepo = () => {
         repo = context.repo.repo;
     }
 
-    let owner = getInput("owner", { required: false });
+    let owner = getInput("org", { required: false });
     if (!owner) {
         owner = context.repo.owner;
     }

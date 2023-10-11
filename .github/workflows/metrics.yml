@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Fetch metrics
         uses: Bullrich/github-metrics@main
-        env:
-          owner: ${{ inputs.ORG }}
+        with:
+          org: ${{ inputs.ORG }}
           repo: ${{ inputs.REPO }}
           TOKEN: ${{ secrets.PAT }}
